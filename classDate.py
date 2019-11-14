@@ -82,11 +82,12 @@ class Date(object):
             self.day -= 1
         else:
             if self.month > 1:
-                self.day = Date.lengths[self.month - 1]
                 self.month -= 1
+                self.day = Date.lengths[self.month]
+               
             else:
-                self.day = 31
-                self.month = 12
+                self.day = Date.lengths[12]
+                self.month = Date.monthsInYear
                 self.year -= 1
 
     def prevDays(self, n):
